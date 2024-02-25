@@ -1,0 +1,4 @@
+﻿  Camera.cpp
+C:\Opengl\Project1\Camera.cpp(62,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Opengl\Project1\Camera.cpp(63,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Project1.vcxproj -> C:\Opengl\Project1\x64\Debug\Project1.exe
