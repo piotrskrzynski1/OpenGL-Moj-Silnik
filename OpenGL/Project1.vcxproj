@@ -148,6 +148,8 @@
   <ItemGroup>
     <None Include="default.frag" />
     <None Include="default.vert" />
+    <None Include="lightsource.frag" />
+    <None Include="lightsource.vert" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EBO.h" />
