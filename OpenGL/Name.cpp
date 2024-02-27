@@ -212,7 +212,7 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
-		//lightshader
+		//LIGHT SHADER
 		lightShader.Activate();
 		glm::vec3 transl = glm::vec3(sin(glfwGetTime()), 0.5f-abs(cos(glfwGetTime())*0.1f), 1.0f);
 		glm::mat4 matrixscl = glm::scale(glm::vec3(0.25f,0.25f,0.25f));
@@ -223,7 +223,8 @@ int main() {
 		vao2.Bind();
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
-		//cube shader
+
+		//CUBE SHADER
 		myShader.Activate();
 		glm::mat4 model = glm::mat4(1.0f);
 		glBindVertexArray(vao);
@@ -241,6 +242,14 @@ int main() {
 		glUniform1i(glGetUniformLocation(myShader.ID, "Texture2"), 1);
 		glUniform3fv(glGetUniformLocation(myShader.ID, "objectColor"), 1, glm::value_ptr(glm::vec3(1.0f, 0.5f, 0.31f)));
 		glUniform3fv(glGetUniformLocation(myShader.ID, "lightColor"), 1, glm::value_ptr(glm::vec3(1.0f, 1.0f, 1.0f)));
+		myShader.SetVec3("material.ambient",1.0f,0.5f,0.31f);
+		myShader.SetVec3("material.diffuse",1.0f,0.5f,0.31f);
+		myShader.SetVec3("material.specular",0.5f,0.5f,0.5f);
+		myShader.SetFloat("material.shininess",32.0f);
+		myShader.SetVec3("light.ambient", 0.2f, 0.2f, 0.2f);
+		myShader.SetVec3("light.diffuse", 0.5f, 0.5f, 0.5f); // darkened
+		myShader.SetVec3("light.specular", 1.0f, 1.0f, 1.0f);
+
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		glfwSwapBuffers(window);

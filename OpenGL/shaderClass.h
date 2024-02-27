@@ -19,5 +19,7 @@ public:
 
 	void Activate();
 	void Delete();
+	void SetVec3(const char* name, float a,float b, float c);
+	void SetFloat(const char* name, float a);
 };
 #endif
